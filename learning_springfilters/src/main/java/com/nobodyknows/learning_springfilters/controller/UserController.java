@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/user/")
+@RequestMapping(value = "/user/") 
 public class UserController {
 	
 	@RequestMapping(value = "/sign_in", method = RequestMethod.POST)
