@@ -21,9 +21,9 @@ public class UserController {
 	@RequestMapping(value = "/sign_in", method = RequestMethod.POST)
 	public String signIn (@RequestBody String json) {
 		
-		String key = "user:accessToken:1:svi23k423nsdi";
+		String key = "user:access_token:1:svi23k423nsdi";
 		String value = GUIDUtils.generateNewGUID();
-//		redisTemplate.opsForValue().set(key, value);
+		redisTemplate.opsForValue().set(key, value);
 		
 		return "key:" + key + ", value:" + value;
 		

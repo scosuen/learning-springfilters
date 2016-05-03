@@ -45,7 +45,7 @@ public class UserPermissionFilter implements Filter {
 			return;
 		}
 
-		if (Optional.ofNullable(redisTemplate.opsForValue().get("user:accessToken:" + httpRequest.getHeader("user_id") + ":" + httpRequest.getHeader("device_id")))
+		if (Optional.ofNullable(redisTemplate.opsForValue().get("user:access_token:" + httpRequest.getHeader("user_id") + ":" + httpRequest.getHeader("device_id")))
 				.filter(o -> Optional.ofNullable(httpRequest.getHeader("acc_token")).orElse("null").equals(o)).isPresent()) {
 			chain.doFilter(httpRequest, httpResponse);
 		} else {
